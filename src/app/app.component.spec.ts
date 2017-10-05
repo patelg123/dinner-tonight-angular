@@ -1,27 +1,37 @@
-import { TestBed, async } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By }              from '@angular/platform-browser';
+import { DebugElement }    from '@angular/core';
+
 import { AppComponent } from './app.component';
-describe('AppComponent', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
-  }));
-  it('should create the app', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
-  }));
-  it(`should have as title 'app'`, async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('app');
-  }));
-  it('should render title in a h1 tag', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to app!');
-  }));
+
+describe('AppComponent (templateUrl)', () => {
+
+	let comp:    AppComponent;
+	let fixture: ComponentFixture<AppComponent>;
+	let de:      DebugElement;
+	let el:      HTMLElement;
+
+	// async beforeEach
+	beforeEach(async(() => {
+		TestBed.configureTestingModule({
+		declarations: [ AppComponent ], // declare the test component
+		})
+		.compileComponents();  // compile template and css
+	}));
+
+  	// synchronous beforeEach
+  	beforeEach(() => {
+		fixture = TestBed.createComponent(AppComponent);
+
+		comp = fixture.componentInstance; // AppComponent test instance
+
+		// query for the title <h1> by CSS element selector
+		de = fixture.debugElement.query(By.css('h1'));
+		el = de.nativeElement;
+  	});
+
+  	it('should display title set in component', () => {
+		fixture.detectChanges();
+		expect(el.textContent).toEqual(comp.title);
+  	});
 });
