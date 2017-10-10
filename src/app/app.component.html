@@ -1,18 +1,23 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-	<h1>{{title}}</h1>
-</div>
+<h1>{{title}}</h1>
+
 
 <ul class="recipe-list">
-	<li *ngFor="let recipe of recipes">
+	<li *ngFor="let recipe of recipes"
+		[class.selected]="recipe === selectedRecipe"
+		(click)="onSelect(recipe)">
 		{{recipe.title}}	
 	</li>
 </ul>
 
+<recipe-detail [recipe]="selectedRecipe"></recipe-detail>
+
+
+
+
 <!--
-<ul>
-    <li *ngFor="let recipe of recipes">
-      <h2>{{recipe.title}}</h2>
+	<ul>
+    	<li *ngFor="let recipe of recipes">
+      		<h2>{{recipe.title}}</h2>
 
       		<h3>Ingredients</h3>
     	  	<ul>
@@ -27,6 +32,12 @@
     	  			{{ step.step }}
     	  		</li>
     	  	</ul>
-    </li>
-</ul>
+    	</li>
+	</ul>
+
+	category: 'Sea Food',
+		level: 'Hard',
+		prep_time: 20,
+		total_time: 40
+
 -->

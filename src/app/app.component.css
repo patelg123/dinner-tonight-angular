@@ -4,7 +4,6 @@
 	padding: 0;
 	width: 15em;	
 }
-
 .recipe-list li {
 	cursor: pointer;
     position: relative;
@@ -16,10 +15,20 @@
     border-radius: 4px;
     font-weight: bold;
 }
-
+.recipe-list li.selected:hover {
+      background-color: #BBD8DC !important;
+      color: white;
+}
 .recipe-list li:hover {
     color: #607D8B;
     background-color: #DDD;
     left: .1em;
 }
-
+.recipe-list .text {
+      position: relative;
+      top: -3px;
+}
+.selected {
+      background-color: #CFD8DC !important;
+      color: white;
+}
