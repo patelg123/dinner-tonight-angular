@@ -3,8 +3,8 @@ export class Recipe{
 	title: string;
 	category: string;
 	level: string;
-	prep_time: number;
-	total_time: number;
+	prepTime: number;
+	totalTime: number;
 	ingredients: Array<{item: string}>;
 	steps: Array<{step: string}>
 }

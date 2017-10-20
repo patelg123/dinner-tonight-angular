@@ -1,0 +1,32 @@
+<h3>What do ya fancy?!!</h3>
+
+
+
+<form [formGroup]= "recipesFilterForm" novalidate>
+	<div class="form-group">
+		<label class="center-block">
+			<select formControlName="category" #selectCategory>
+				<option value="" selected="selected">Select Category</option>
+	          	<option *ngFor="let category of categories" [value]=category >{{category}}</option>
+	      	</select>
+		</label>
+	</div>
+</form>
+
+{{selectCategory.value}}
+
+
+<!--
+
+<div class="form-group">
+
+<label class="center-block">Category
+	<div *ngFor="let category of categories" >
+    	<input type="checkbox" [(ngModel)]="category.selected" /> {{category.name}}
+	</div>
+</label>
+
+
+</div>
+
+-->

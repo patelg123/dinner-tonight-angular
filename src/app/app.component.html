@@ -1,8 +1,51 @@
-<h1>{{title}}</h1>
+ <h1>{{title}}</h1>
 
+<!--<recipes-filter-form></recipes-filter-form>-->
+
+
+
+<form [formGroup]= "recipesFilterForm" novalidate>
+ 
+    <div class="form-group">
+        <label class="center-block">
+            <select formControlName="category" #selectedCategory>
+                <option value="" selected="selected">Select Category</option>
+                <option *ngFor="let category of categories" [value]=category >{{category}}</option>
+            </select>
+        </label>
+    </div>
+
+    <div class="form-group">
+        <label class="center-block">
+            <select formControlName="level" #selectedLevel>
+                <option value="" selected="selected">Select Difficulty</option>
+                <option *ngFor="let level of levels" [value]=level >{{level}}</option>
+            </select>
+        </label>
+    </div>
+
+    <div class="form-group">
+        <label class="center-block">
+            <select formControlName="prepTime" #selectedPrepTime>
+                <option value="" selected="selected">Select Prep Time</option>
+                <option *ngFor="let prepTime of prepTimes" [value]=prepTime >{{prepTime}}</option>
+            </select>
+        </label>
+    </div>
+
+    <div class="form-group">
+        <label class="center-block">
+            <select formControlName="totalTime" #selectedTotalTime>
+                <option value="" selected="selected">Select Total Time</option>
+                <option *ngFor="let totalTime of totalTimes" [value]=totalTime >{{totalTime}}</option>
+            </select>
+        </label>
+    </div>
+</form>
 
 <ul class="recipe-list">
-	<li *ngFor="let recipe of recipes"
+	<!--<li *ngFor="let recipe of recipes | recipeFilter: 'category' : selectCategory.value | recipeFilter: 'level' : selectLevel.value" -->
+    <li *ngFor="let recipe of recipes | recipeFilter: selectedCategory.value : selectedLevel.value : selectedPrepTime.value : selectedTotalTime.value"
 		[class.selected]="recipe === selectedRecipe"
 		(click)="onSelect(recipe)">
 		{{recipe.title}}	

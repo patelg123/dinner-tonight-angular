@@ -6,8 +6,8 @@ export const RECIPES: Recipe[] = [
 		title: 'Slow Cooker Chicken Thighs',
 		category: 'Chicken',
 		level: 'Easy',
-		prep_time: 15,
-		total_time: 180,
+		prepTime: 15,
+		totalTime: 180,
 		ingredients: [
 						{ item: `1 tbsp. extra-virgin olive oil`},
 						{ item: `6 bone-in or boneless chicken thighs`},
@@ -35,8 +35,8 @@ export const RECIPES: Recipe[] = [
 		title: 'Barbecue Pulled Pork Shepherds Pie',
 		category: 'Pork',
 		level: 'Medium',
-		prep_time: 20,
-		total_time: 35,
+		prepTime: 20,
+		totalTime: 35,
 		ingredients: [
 						{ item: `2 lb. red potatoes` },
 						{ item: `1/2 packet ranch seasoning mix` },
@@ -63,8 +63,41 @@ export const RECIPES: Recipe[] = [
 		title: 'Spicy Shrimp with Creamy Polenta',
 		category: 'Sea Food',
 		level: 'Hard',
-		prep_time: 20,
-		total_time: 40,
+		prepTime: 20,
+		totalTime: 40,
+		ingredients: [
+						{ item: `salt` },
+						{ item: `1 c. polenta or yellow cornmeal` },
+						{ item: `2 tbsp. butter` },
+						{ item: `1/3 c. freshly grated Parmesan` },
+						{ item: `1/3 c. freshly grated Asiago` },
+						{ item: `2 tbsp. extra-virgin olive oil` },
+						{ item: `3 cloves garlic, minced` },
+						{ item: `1/2 tsp. crushed red pepper flakes, plus more for garnish` },
+						{ item: `3 green onions, thinly sliced, whites and greens separated` },
+						{ item: `1 pt. grape tomatoes, halved` },
+						{ item: `1 lb. medium shrimp, peeled and deveined (tails left on, if desired)` },
+						{ item: `2 tsp. fresh thyme leaves` },
+						{ item: `1/2 c. dry white wine` },
+						{ item: `1/2 c. chicken stock` },
+						{ item: `2 tbsp. heavy cream` }
+		],
+		steps: [
+					{ step: `In a medium, heavy-bottomed saucepan, bring salt and 4 cups water to a boil. Add polenta in a slow, steady stream, whisking constantly. Continue to whisk 2 minutes more, then reduce heat and simmer, covered, 20 minutes, whisking occasionally. Remove from heat and whisk in butter and cheese, then season with salt.` },
+					{ step: `In a large skillet over medium-high heat, heat oil. Add garlic, red pepper flakes, and green onion whites and cook, stirring occasionally, until fragrant, 2 minutes. Add tomatoes and cook until soft, stirring, 4 minutes.` },
+					{ step: `Add shrimp and thyme and cook until shrimp are completely pink, stirring, 4 minutes, then season with salt and pepper. Add wine and chicken stock and bring to a boil, then reduce heat to low and simmer until liquid is reduced by half, 2 to 3 minutes. Stir in cream and simmer 2 minutes more.` },
+					{ step: `Serve shrimp over polenta and garnish with remaining green onion greens.` }
+		]
+	},
+
+
+	{ 
+		id: 4,
+		title: 'Spicy Chicken with Creamy Polenta',
+		category: 'Chicken',
+		level: 'Hard',
+		prepTime: 20,
+		totalTime: 40,
 		ingredients: [
 						{ item: `salt` },
 						{ item: `1 c. polenta or yellow cornmeal` },
